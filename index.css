@@ -1,63 +1,87 @@
-.as {
-    width: 19px;
-    height: 2px;
-    background-color: black;
-    border-radius: 2px;
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.as {
-    width: 19px;
-    height: 2px;
-    background-color: black;
-    border-radius: 2px;
-    margin-top: 4px;
-}
-.as {
-    width: 19px;
-    height: 3px;
-    background-color: black;
-    border-radius: 2px;
-    margin-top: 4px;
-}
-.q{
+section
+{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-text-align: center;
-color: #000000;
+    align-items: center;
+    min-height: 100vh;
+    background: #042104;
+    animation: animateColor 8s linear infinite;
+}
+@keyframes animateColor
+{
+    0%
+    {
+        filter: hue-rotate(0deg);
+    }
+    100%
+    {
+        filter: hue-rotate(360deg);
+    }
+}
 
-}
-.qw{
-    margin-left: 900px;
-    margin-top: 50px;
-}
-.ww{
-        display: flex;
-        justify-content: center;
-}
-.re{
+section .contanier
+{
     display: flex;
-        justify-content: center;
 }
-.t{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+section .contanier .circle
+{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 -7.5px;
 }
-.tt{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+section .contanier .circle span
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+    /* 360 / 20 = 18deg */
 }
-.wd{
-    display: flex;
-    justify-content: center;
+section .contanier .circle span::before
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: calc(50% - 7.5px);
+    width: 15px;
+    height: 15px;
+    background: #00ff0a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff0a,
+    0 0 20px #00ff0a,
+    0 0 40px #00ff0a,
+    0 0 60px #00ff0a,
+    0 0 80px #00ff0a,
+    0 0 100px #00ff0a;
+    transform: scale(0.1);
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
 }
-.lop{
-    color: red;
-    margin-right: 80px;
+@keyframes animate
+{
+    0%
+    {
+        transform: scale(1);
+    }
+    50%,100%
+    {
+        transform: scale(0.1);
+    }
+}
+section .contanier .circle:nth-child(2)
+{
+    transform: rotate(-180deg);
+}
+section .contanier .circle:nth-child(2) span::before
+{
+    animation-delay: calc(-0.1s * var(--i));
 }
