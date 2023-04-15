@@ -13,6 +13,7 @@ section
     background: #042104;
     animation: animateColor 8s linear infinite;
 }
+
 @keyframes animateColor
 {
     0%
